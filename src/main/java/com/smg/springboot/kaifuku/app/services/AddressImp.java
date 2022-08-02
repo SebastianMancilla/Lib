@@ -2,11 +2,15 @@ package com.smg.springboot.kaifuku.app.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.smg.springboot.kaifuku.app.model.Address;
 import com.smg.springboot.kaifuku.app.repository.AddressRepository;
 
+@Service
 public class AddressImp implements IAddress {
-	
+	@Autowired
 	private AddressRepository addressRepository;
 
 	@Override

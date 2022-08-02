@@ -7,7 +7,7 @@ import com.smg.springboot.kaifuku.app.model.Library;
 
 public interface ILibrary {
 	
-public List<Library> findAll();
+	public List<Library> findAll();
 	
 	public Library findById(Long id);
 	

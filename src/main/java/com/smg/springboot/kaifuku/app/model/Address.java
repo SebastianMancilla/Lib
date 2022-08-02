@@ -1,8 +1,9 @@
 package com.smg.springboot.kaifuku.app.model;
 
 import java.io.Serializable;
-
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.*;
 
@@ -10,8 +11,9 @@ import lombok.*;
 @Getter
 @Entity
 @Table(name = "address")
+@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Address implements Serializable{
-
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -21,6 +23,6 @@ public class Address implements Serializable{
 	@Column(nullable = false)
 	private String location;
 	
-	@OneToMany(mappedBy = "address")
+	@OneToOne(mappedBy = "address")
 	private Library library;
 }

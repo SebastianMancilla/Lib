@@ -5,9 +5,9 @@ import java.util.List;
 import com.smg.springboot.kaifuku.app.model.Address;
 
 
-
 public interface IAddress {
-public List<Address> findAll();
+	
+	public List<Address> findAll();
 	
 	public Address findById(Long id);
 	
