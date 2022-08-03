@@ -1,5 +1,6 @@
 package com.smg.springboot.kaifuku.app.services;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class LibraryServiceImpl implements ILibrary{
 	@Override
 	@Transactional(readOnly = true)
 	public List<Library> findAll() {
-		return (List<Library>) libRepository.findAll();
+		return libRepository.findAll();
 	}
 
 	@Override

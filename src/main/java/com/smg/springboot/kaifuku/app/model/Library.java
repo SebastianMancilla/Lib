@@ -5,16 +5,19 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import lombok.*;
 
-@Setter
-@Getter
+
+
+
 @Entity
 @Table(name = "library")
+@Setter
+@Getter
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Library implements Serializable{
 	private static final long serialVersionUID = 1L;
 
@@ -28,4 +31,30 @@ public class Library implements Serializable{
 	@OneToOne
 	@JoinColumn(name = "address_id")
 	private Address address;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	
 }
